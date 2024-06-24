@@ -1,0 +1,16 @@
+h1 {
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    color: rebeccapurple;
+}
+ul {
+    display: flex;
+    list-style: none;
+    font-size: 20px;
+}
+ul li {
+    padding: 20px;
+    font-weight: bold;
+}
+ul li a{
+    text-decoration: none;
+}
