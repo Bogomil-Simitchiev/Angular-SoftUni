@@ -1,15 +1,11 @@
 import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
-
-interface Todo {
-  title: string;
-  isCompleted: boolean;
-}
+import { Todo, TodoItemComponent } from '../todo-item/todo-item.component';
 
 @Component({
   selector: 'app-home',
   standalone: true,
-  imports: [CommonModule],
+  imports: [CommonModule, TodoItemComponent],
   templateUrl: './home.component.html',
   styleUrl: './home.component.css'
 })
@@ -20,7 +16,9 @@ export class HomeComponent {
     { title: 'Task 3', isCompleted: true },
     { title: 'Task 4', isCompleted: false },
   ];
-
+  handleMarkAllTasksAsCompleted() {
+    this.todos.map(t => t.isCompleted = true);
+  }
   handleChangeTodoCompleted(todo: Todo) {
     todo.isCompleted = !todo.isCompleted;
   }
