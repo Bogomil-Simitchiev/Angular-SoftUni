@@ -1,5 +1,4 @@
 import { Component, EventEmitter, Input, Output } from '@angular/core';
-import { HomeComponent } from '../home/home.component';
 
 export interface Todo {
   title: string;
@@ -9,7 +8,7 @@ export interface Todo {
 @Component({
   selector: 'app-todo-item',
   standalone: true,
-  imports: [HomeComponent],
+  imports: [],
   templateUrl: './todo-item.component.html',
   styleUrl: './todo-item.component.css'
 })
