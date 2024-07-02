@@ -1,12 +1,13 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Todo } from './todo-item/todo-item.component';
-import { firstValueFrom } from 'rxjs';
+import { Observable } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
 })
 export class TodoService {
+  private url: string = 'https://jsonplaceholder.typicode.com/todos';
 
   constructor(private httpClient: HttpClient) { }
 
@@ -16,8 +17,8 @@ export class TodoService {
   // }
 
   // This is an example with HttpClient
-  getData(url: string): Promise<Todo[]> {
-    return firstValueFrom(this.httpClient.get<Todo[]>(url));
+  getTodos(): Observable<Todo[]> {
+    return this.httpClient.get<Todo[]>(this.url);
   }
 
 

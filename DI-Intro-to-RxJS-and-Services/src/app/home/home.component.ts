@@ -2,6 +2,7 @@ import { CommonModule } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
 import { Todo, TodoItemComponent } from '../todo-item/todo-item.component';
 import { TodoService } from '../todo.service';
+import { map } from 'rxjs';
 
 @Component({
   selector: 'app-home',
@@ -18,7 +19,7 @@ export class HomeComponent implements OnInit {
     this.todos.map(t => t.isCompleted = true);
   }
   handleFilterLowerTodos() {
-    this.todos = this.todos.filter((t, index) => index < 9);
+    this.todos = this.todos.filter((t, index) => index < 4);
   }
   handleChangeTodoCompleted(todo: Todo) {
     todo.isCompleted = !todo.isCompleted;
@@ -27,7 +28,8 @@ export class HomeComponent implements OnInit {
 
   }
   ngOnInit(): void {
-    this.myService.getData('https://jsonplaceholder.typicode.com/todos').then(todos => {
+    this.myService.getTodos().pipe(map(todosValues => todosValues.filter((t, i) => i <= 9))
+    ).subscribe(todos => {
       this.todos = todos;
     });
 
