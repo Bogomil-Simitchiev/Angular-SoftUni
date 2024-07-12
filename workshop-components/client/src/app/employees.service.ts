@@ -13,6 +13,13 @@ export class EmployeesService {
   }
 
   getAllEmployees(): Observable<Employee[]> {
-    return this.httpClient.get<any>(`${this.URL}/employees`);
+    return this.httpClient.get<Employee[]>(`${this.URL}/employees`);
+  }
+
+  login(): void {
+    localStorage.setItem('user', JSON.stringify({ isLoggedIn: true }));
+  }
+  logout(): void {
+    localStorage.clear();
   }
 }

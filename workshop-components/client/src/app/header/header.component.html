@@ -2,13 +2,20 @@
     <h1>DVB</h1>
     <nav>
         <div class="left-items">
-            <a href="#">Login</a>
-            <a href="#">Register</a>
-        </div>
-        <div class="right-items">
             <a href="#">Home</a>
             <a href="#">About</a>
             <a href="#">Contact</a>
+        </div>
+        <div class="right-items">
+            @if (user) {
+            <a href="#" (click)="logoutUser()">Logout</a>
+
+            }
+            @else {
+            <a href="#" (click)="loginUser()">Login</a>
+            <a href="#">Register</a>
+            }
+
         </div>
     </nav>
 </header>

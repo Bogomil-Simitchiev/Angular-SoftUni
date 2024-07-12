@@ -7,12 +7,12 @@ import { CommonModule } from '@angular/common';
   standalone: true,
   imports: [CommonModule],
   templateUrl: './employees.component.html',
-  styleUrl: './employees.component.css'
+  styleUrls: ['./employees.component.css'] // corrected from styleUrl to styleUrls
 })
 export class EmployeesComponent {
-  // Initialize the visibility state for each employee
-  emailVisibility: boolean[] = [];
-  @Input() employees: Employee[]
+  @Input() employees: Employee[];
+  @Input() emailVisibility: boolean[];
+  
   toggleEmailVisibility(index: number) {
     this.emailVisibility[index] = !this.emailVisibility[index];
   }
@@ -20,5 +20,4 @@ export class EmployeesComponent {
   isEmailVisible(index: number): boolean {
     return this.emailVisibility[index];
   }
-
 }

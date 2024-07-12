@@ -23,12 +23,14 @@ export interface Employee {
 })
 export class MainComponent implements OnInit {
   employees: Employee[];
+  emailVisibility: boolean[];
 
   constructor(private employeesService: EmployeesService) { }
 
   ngOnInit(): void {
     this.employeesService.getAllEmployees().subscribe(currentEmployees => {
       this.employees = Object.values(currentEmployees);
+      this.emailVisibility = new Array(this.employees.length).fill(true);
     });
   }
 }
