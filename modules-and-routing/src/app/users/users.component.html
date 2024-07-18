@@ -1,0 +1,8 @@
+<ul>
+    @for (user of users; track $index) {
+    <li> {{user.name}}</li>
+    <a [routerLink]="['/users', user.id]">See profile</a>
+    <br />
+    <br />
+    }
+</ul>
