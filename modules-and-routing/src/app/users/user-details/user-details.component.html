@@ -1,1 +1,10 @@
 <p>User ID: {{id}}</p>
+
+@if (user) {
+Username: {{user.name}}
+Email: {{user.email}}
+Phone: {{user.phone}}
+}
+@else {
+loading...
+}
