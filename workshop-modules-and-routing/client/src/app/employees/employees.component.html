@@ -1,0 +1,11 @@
+<li *ngFor="let employee of employees; let i = index">
+    FirstName: {{employee.first_name}},
+    LastName: {{employee.last_name}},
+    Gender: {{employee.gender}},
+    @if (user) {
+    Salary: {{employee.salary}}
+    }
+    <p [class.isClickedToShow]="isEmailVisible(i)">Email of {{employee.first_name}} is {{employee.email}}
+    </p>
+    <button (click)="toggleEmailVisibility(i)">{{isEmailVisible(i) ? 'Show email' : 'Show less'}}</button>
+</li>
