@@ -1,35 +1,15 @@
 .main {
-    padding: 2em;
-    background-color: #f9f9f9;
-    font-family: Arial, sans-serif;
+    padding: 20px;
+    font-family: 'Arial', sans-serif;
+    background-color: #f4f4f9;
+}
+
+h2 {
+    text-align: center;
     color: #333;
 }
 
-.main h2 {
-    color: #2c3e50;
-    font-size: 2em;
-    margin-bottom: 1em;
-    text-align: center;
-}
-
-.student-list {
+.employee-list {
     list-style-type: none;
     padding: 0;
-}
-
-.student-item {
-    background-color: #ffffff;
-    border: 1px solid #ddd;
-    border-radius: 8px;
-    margin-bottom: 1em;
-    padding: 1em;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-}
-
-.student-item div {
-    margin-bottom: 0.5em;
-}
-.student-item strong {
-    color: #3f51b5;
-    font-weight: bold;
 }

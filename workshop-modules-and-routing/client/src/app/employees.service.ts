@@ -21,10 +21,12 @@ export class EmployeesService {
     return JSON.parse(localStorage.getItem('user')!);
   }
 
-  login(): void {
+  login(): IUser {
     localStorage.setItem('user', JSON.stringify({ name: 'John', age: 25 }));
+    return this.getUserFromLocalStorage();
   }
-  logout(): void {
+  logout(): IUser {
     localStorage.clear();
+    return this.getUserFromLocalStorage();
   }
 }

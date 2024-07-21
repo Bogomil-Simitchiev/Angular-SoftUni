@@ -16,15 +16,12 @@ import { EmployeesComponent } from './employees/employees.component';
 export class MainComponent implements OnInit {
   employees: Employee[];
   emailVisibility: boolean[];
-  user: IUser;
-
   constructor(private employeesService: EmployeesService) { }
 
   ngOnInit(): void {
     this.employeesService.getAllEmployees().subscribe(currentEmployees => {
       this.employees = Object.values(currentEmployees);
-      this.emailVisibility = new Array(this.employees.length).fill(true);
+      this.emailVisibility = new Array(this.employees.length).fill(false);
     });
-    this.user = this.employeesService.getUserFromLocalStorage();
   }
 }

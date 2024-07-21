@@ -14,7 +14,7 @@ import { EmployeesService } from '../../../employees.service';
 export class EmployeesComponent implements OnInit {
   @Input() employees: Employee[];
   @Input() emailVisibility: boolean[];
-  @Input() user: IUser;
+  user: IUser;
 
   constructor(private employeesService: EmployeesService) { }
   ngOnInit(): void {

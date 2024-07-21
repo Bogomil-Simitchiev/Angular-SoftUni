@@ -20,14 +20,11 @@ export class HeaderComponent implements OnInit {
   }
 
   loginUser(): void {
-    this.employeeService.login();
-    this.user = this.employeeService.getUserFromLocalStorage();
+    this.user = this.employeeService.login();
   }
 
   logoutUser(): void {
-    this.employeeService.logout();
-    this.user = this.employeeService.getUserFromLocalStorage();
-
+    this.user = this.employeeService.logout();
   }
 
 }
