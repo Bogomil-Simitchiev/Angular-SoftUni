@@ -1,8 +1,9 @@
 import { Component, OnInit } from '@angular/core';
-import { CommonModule } from '@angular/common';
-import { EmployeesComponent } from '../../employees/employees.component';
 import { EmployeesService } from '../../employees.service';
 import { Employee } from '../../interfaces/employee';
+import { CommonModule } from '@angular/common';
+import { IUser } from '../../interfaces/user';
+import { EmployeesComponent } from './employees/employees.component';
 
 @Component({
   selector: 'app-main',
@@ -10,11 +11,12 @@ import { Employee } from '../../interfaces/employee';
   imports: [CommonModule, EmployeesComponent],
   providers: [EmployeesService],
   templateUrl: './main.component.html',
-  styleUrl: './main.component.css'
+  styleUrls: ['./main.component.css']
 })
 export class MainComponent implements OnInit {
   employees: Employee[];
   emailVisibility: boolean[];
+  user: IUser;
 
   constructor(private employeesService: EmployeesService) { }
 
@@ -23,5 +25,6 @@ export class MainComponent implements OnInit {
       this.employees = Object.values(currentEmployees);
       this.emailVisibility = new Array(this.employees.length).fill(true);
     });
+    this.user = this.employeesService.getUserFromLocalStorage();
   }
 }

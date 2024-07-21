@@ -10,10 +10,14 @@ import { RouterModule } from '@angular/router';
   templateUrl: './header.component.html',
   styleUrl: './header.component.css'
 })
-export class HeaderComponent {
+export class HeaderComponent implements OnInit {
   user: IUser;
 
   constructor(private employeeService: EmployeesService) { }
+
+  ngOnInit(): void {
+    this.user = this.employeeService.getUserFromLocalStorage();
+  }
 
   loginUser(): void {
     this.employeeService.login();

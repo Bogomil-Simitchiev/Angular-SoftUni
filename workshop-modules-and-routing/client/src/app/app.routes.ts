@@ -9,12 +9,12 @@ import { MainComponent } from './core/main/main.component';
 
 export const routes: Routes = [
     { path: '', redirectTo: '/home', pathMatch: 'full' },
-    { path: 'home', component: HomeComponent },
-    { path: 'employees', component: MainComponent },
-    { path: 'about', component: AboutComponent },
-    { path: 'contact', component: ContactComponent },
+    { path: 'home', component: HomeComponent, title: 'DVB Company' },
+    { path: 'employees', component: MainComponent, title: 'Employees' },
+    { path: 'about', component: AboutComponent, title: 'About' },
+    { path: 'contact', component: ContactComponent, title: 'Contact' },
     { path: 'frontend-information', component: FrontendInformationComponent },
     { path: 'backend-information', component: BackendInformationComponent },
     { path: 'designer-information', component: DesignerInformationComponent },
-
+    
 ];
