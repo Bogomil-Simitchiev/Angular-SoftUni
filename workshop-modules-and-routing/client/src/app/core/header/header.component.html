@@ -9,7 +9,7 @@
         <div class="right-items">
             @if (user) {
             <a>Welcome, {{user.name}}!</a>
-            <a (click)="logoutUser()">Logout</a>
+            <a style="cursor: pointer;" (click)="logoutUser()">Logout</a>
 
             }
             @else {

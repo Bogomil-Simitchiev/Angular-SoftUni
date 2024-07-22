@@ -1,1 +1,12 @@
-<p>frontend-information works!</p>
+<div class="frontend-info-container">
+  <img src="https://scontent-sof1-1.xx.fbcdn.net/v/t1.6435-1/35142504_2165641210348436_142415484833234944_n.jpg?stp=dst-jpg_p200x200&_nc_cat=108&ccb=1-7&_nc_sid=e4545e&_nc_ohc=664AMjDa4pAQ7kNvgEwr50q&_nc_ht=scontent-sof1-1.xx&oh=00_AYDF5j2jICsPdQ2jvWDJ1XnwgICMK4b6IEXZTZKEuHkAAA&oe=66C5E268" alt="Bogomil" class="profile-image">
+  <h1>About {{ bogomil.name }}</h1>
+  <p><strong>Age:</strong> {{ bogomil.age }}</p>
+  <p><strong>Profession:</strong> {{ bogomil.profession }}</p>
+  <p><strong>Skills:</strong></p>
+  <ul>
+    <li *ngFor="let skill of bogomil.skills">{{ skill }}</li>
+  </ul>
+  <p><strong>Experience:</strong> {{ bogomil.experience }}</p>
+  <p><strong>Bio:</strong> {{ bogomil.bio }}</p>
+</div>

@@ -6,6 +6,13 @@ import { FrontendInformationComponent } from './frontend-information/frontend-in
 import { BackendInformationComponent } from './backend-information/backend-information.component';
 import { DesignerInformationComponent } from './designer-information/designer-information.component';
 import { MainComponent } from './core/main/main.component';
+import { RegisterComponent } from './auth/register/register.component';
+
+const registerRoute = {
+    path: 'register',
+    component: RegisterComponent,
+    title: 'register'
+}
 
 export const routes: Routes = [
     { path: '', redirectTo: '/home', pathMatch: 'full' },
@@ -16,5 +23,6 @@ export const routes: Routes = [
     { path: 'frontend-information', component: FrontendInformationComponent },
     { path: 'backend-information', component: BackendInformationComponent },
     { path: 'designer-information', component: DesignerInformationComponent },
-    
+    registerRoute
+
 ];

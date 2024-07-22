@@ -1,1 +1,36 @@
-<p>contact works!</p>
+<div class="contact-container">
+    <h1>Contact Us</h1>
+    <div class="contact-details">
+        <p><strong>Address:</strong> {{ companyInfo.address }}</p>
+        <p><strong>Phone:</strong> {{ companyInfo.phone }}</p>
+        <p><strong>Email:</strong> <a href="mailto:{{ companyInfo.email }}">{{ companyInfo.email }}</a></p>
+    </div>
+
+    <form>
+        <div class="form-group">
+            <label for="name">Name</label>
+            <input id="name" formControlName="name" type="text" class="form-control">
+            
+        </div>
+
+        <div class="form-group">
+            <label for="email">Email</label>
+            <input id="email" formControlName="email" type="email" class="form-control">
+            
+        </div>
+
+        <div class="form-group">
+            <label for="subject">Subject</label>
+            <input id="subject" formControlName="subject" type="text" class="form-control">
+            
+        </div>
+
+        <div class="form-group">
+            <label for="message">Message</label>
+            <textarea id="message" formControlName="message" rows="5" class="form-control"></textarea>
+           
+        </div>
+
+        <button type="submit" class="btn">Send Message</button>
+    </form>
+</div>

@@ -1,1 +1,38 @@
-<p>about works!</p>
+<div class="about-container">
+    <h1>About {{ companyName }}</h1>
+    <p>{{ description }}</p>
+    
+    <section>
+      <h2>History</h2>
+      <p>{{ history }}</p>
+    </section>
+  
+    <section>
+      <h2>Mission</h2>
+      <p>{{ mission }}</p>
+    </section>
+  
+    <section>
+      <h2>Values</h2>
+      <ul>
+        <li *ngFor="let value of values">{{ value }}</li>
+      </ul>
+    </section>
+  
+    <section>
+      <h2>Services</h2>
+      <ul>
+        <li *ngFor="let service of services">{{ service }}</li>
+      </ul>
+    </section>
+  
+    <section>
+      <h2>Our Team</h2>
+      <div class="team-member" *ngFor="let member of team">
+        <h3>{{ member.name }}</h3>
+        <p><strong>Role:</strong> {{ member.role }}</p>
+        <p>{{ member.bio }}</p>
+      </div>
+    </section>
+  </div>
+  
