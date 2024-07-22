@@ -7,17 +7,19 @@ import { BackendInformationComponent } from './backend-information/backend-infor
 import { DesignerInformationComponent } from './designer-information/designer-information.component';
 import { MainComponent } from './core/main/main.component';
 import { RegisterComponent } from './auth/register/register.component';
+import { EmployeeDetailsComponent } from './core/main/employee-details/employee-details.component';
 
 const registerRoute = {
     path: 'register',
     component: RegisterComponent,
-    title: 'register'
+    title: 'Register'
 }
 
 export const routes: Routes = [
     { path: '', redirectTo: '/home', pathMatch: 'full' },
     { path: 'home', component: HomeComponent, title: 'DVB Company' },
     { path: 'employees', component: MainComponent, title: 'Employees' },
+    { path: 'employees/:id', component: EmployeeDetailsComponent, title: 'Details' },
     { path: 'about', component: AboutComponent, title: 'About' },
     { path: 'contact', component: ContactComponent, title: 'Contact' },
     { path: 'frontend-information', component: FrontendInformationComponent },

@@ -11,4 +11,10 @@
     <button (click)="toggleEmailVisibility(i)" class="toggle-email-button">
         {{!isEmailVisible(i) ? 'Show email' : 'Show less'}}
     </button>
+    <br/>
+    <br/>
+
+    <a [routerLink]="['/employees', employee.id]" class="toggle-email-button">
+       Details
+    </a>
 </li>

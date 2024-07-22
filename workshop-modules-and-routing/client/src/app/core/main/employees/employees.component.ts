@@ -3,11 +3,12 @@ import { CommonModule } from '@angular/common';
 import { Employee } from '../../../interfaces/employee';
 import { IUser } from '../../../interfaces/user';
 import { EmployeesService } from '../../../employees.service';
+import { RouterModule } from '@angular/router';
 
 @Component({
   selector: 'app-employees',
   standalone: true,
-  imports: [CommonModule],
+  imports: [CommonModule, RouterModule],
   templateUrl: './employees.component.html',
   styleUrls: ['./employees.component.css']
 })
