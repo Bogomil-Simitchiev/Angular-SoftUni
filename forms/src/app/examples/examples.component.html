@@ -1,0 +1,12 @@
+<p [ngClass]="{'class-name': condition}">examples works!</p>
+
+<button (click)="condition=!condition">Toggle background-color</button>
+
+<p>{{ user?.email ? 'Logged in' : 'Not logged in'}}</p>
+
+<button (click)="login()">login</button>
+<button (click)="logout()">logout</button>
+
+
+<h1 appHighlight highlightColor="lightblue">Hover over this text to see the highlight effect</h1>
+<p appHighlight>Default highlight color is yellow</p>
