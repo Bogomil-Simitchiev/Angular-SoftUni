@@ -10,6 +10,9 @@ import { HighlightDirective } from '../highlight.directive';
   styleUrl: './examples.component.css'
 })
 export class ExamplesComponent {
+  handleColor(newColor: string) {
+    console.log(newColor);
+  }
   condition: boolean = true;
   user: { username: string, email: string } | null = JSON.parse(localStorage.getItem('user')!);
 

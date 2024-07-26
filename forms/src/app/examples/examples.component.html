@@ -10,3 +10,5 @@
 
 <h1 appHighlight highlightColor="lightblue">Hover over this text to see the highlight effect</h1>
 <p appHighlight>Default highlight color is yellow</p>
+
+<p appHighlight (colorChange)="handleColor($event)">Here is the text to hover</p>
