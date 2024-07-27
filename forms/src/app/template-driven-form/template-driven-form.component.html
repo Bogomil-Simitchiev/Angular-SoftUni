@@ -1,0 +1,28 @@
+<form #currentForm="ngForm" (ngSubmit)="handleSubmit()">
+    <div class="form-group">
+        <label for="email">Email address</label>
+        <input name="email" ngModel type="email" class="form-control" id="email" aria-describedby="emailHelp"
+            placeholder="Enter email">
+        <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+    </div>
+    <div class="form-group">
+        <label for="password">Password</label>
+        <input #password="ngModel" minlength="5" name="password" ngModel type="password" class="form-control"
+            id="password" placeholder="Password">
+    </div>
+    <ng-container *ngIf="password.touched && password.invalid">
+        <div *ngIf="password.errors?.['minlength']">
+            Password must be greater than 5
+        </div>
+    </ng-container>
+    <ng-container *ngIf="!isPasswordCorrect">
+        <div>
+            Password must be greater than 5 (isPasswordCorrect)
+        </div>
+    </ng-container>
+    <div class="form-group form-check">
+        <input type="checkbox" name="checkbox" ngModel class="form-check-input" id="exampleCheck1">
+        <label class="form-check-label" for="exampleCheck1">Check me out</label>
+    </div>
+    <button type="submit" class="btn btn-primary">Submit</button>
+</form>
