@@ -1,0 +1,13 @@
+<div class="information-container">
+    <img src="https://scontent-sof1-2.xx.fbcdn.net/v/t39.30808-1/292619578_1771477936517596_9114308044824390174_n.jpg?stp=dst-jpg_s200x200&_nc_cat=110&ccb=1-7&_nc_sid=0ecb9b&_nc_ohc=f5hrvjhK8NgQ7kNvgFObDAP&_nc_ht=scontent-sof1-2.xx&oh=00_AYA4oS0JZeGueyXeRHs-JO3dx5cRvRanug7QcaYvLWd0wA&oe=66A427BC" alt="Valentin" class="profile-image">
+    <h1>About {{ valentin.name }}</h1>
+    <p><strong>Age:</strong> {{ valentin.age }}</p>
+    <p><strong>Profession:</strong> {{ valentin.profession }}</p>
+    <p><strong>Skills:</strong></p>
+    <ul>
+      <li *ngFor="let skill of valentin.skills">{{ skill }}</li>
+    </ul>
+    <p><strong>Experience:</strong> {{ valentin.experience }}</p>
+    <p><strong>Bio:</strong> {{ valentin.bio }}</p>
+  </div>
+  

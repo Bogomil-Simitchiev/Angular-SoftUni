@@ -1,0 +1,20 @@
+<li *ngFor="let employee of employees; let i = index" class="employee-item">
+    <div class="employee-info">
+        <span>FirstName: {{employee.first_name}}</span>
+        <span>LastName: {{employee.last_name}}</span>
+        <span>Gender: {{employee.gender}}</span>
+        <span *ngIf="user">Salary: {{employee.salary}}</span>
+    </div>
+    <p [class.isClickedToShow]="isEmailVisible(i)" class="employee-email">
+        Email of {{employee.first_name}} is <strong>{{employee.email}}</strong>
+    </p>
+    <button (click)="toggleEmailVisibility(i)" class="toggle-email-button">
+        {{!isEmailVisible(i) ? 'Show email' : 'Show less'}}
+    </button>
+    <br/>
+    <br/>
+
+    <a [routerLink]="['/employees', employee.id]" class="toggle-email-button">
+       Details
+    </a>
+</li>

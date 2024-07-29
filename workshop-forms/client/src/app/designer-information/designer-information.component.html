@@ -1,0 +1,12 @@
+<div class="information-container">
+    <img src="https://scontent-sof1-1.xx.fbcdn.net/v/t39.30808-1/434752148_929289425862976_7010749446580815700_n.jpg?stp=dst-jpg_p200x200&_nc_cat=101&ccb=1-7&_nc_sid=0ecb9b&_nc_ohc=PQI6bohQUT4Q7kNvgGkQLg0&_nc_ht=scontent-sof1-1.xx&oh=00_AYBaVKsMfJe9EUD3Ixs_VNwDNqznhAR3dtmOVORKtMnfXA&oe=66A428C3" alt="Iordan" class="profile-image">
+    <h1>About {{ iordan.name }}</h1>
+    <p><strong>Age:</strong> {{ iordan.age }}</p>
+    <p><strong>Profession:</strong> {{ iordan.profession }}</p>
+    <p><strong>Skills:</strong></p>
+    <ul>
+        <li *ngFor="let skill of iordan.skills">{{ skill }}</li>
+    </ul>
+    <p><strong>Experience:</strong> {{ iordan.experience }}</p>
+    <p><strong>Bio:</strong> {{ iordan.bio }}</p>
+</div>

@@ -1,0 +1,15 @@
+.main {
+    padding: 20px;
+    font-family: 'Arial', sans-serif;
+    background-color: #f4f4f9;
+}
+
+h2 {
+    text-align: center;
+    color: #333;
+}
+
+.employee-list {
+    list-style-type: none;
+    padding: 0;
+}

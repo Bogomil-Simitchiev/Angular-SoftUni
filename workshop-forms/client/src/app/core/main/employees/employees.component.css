@@ -1,0 +1,47 @@
+.employee-item {
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    margin: 10px 0;
+    padding: 15px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  }
+  
+  .employee-info {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    font-size: 14px;
+  }
+  
+  .employee-info span {
+    margin-right: 15px;
+  }
+  
+  .employee-email {
+    margin-top: 10px;
+    color: #555;
+    display: none;
+  }
+  
+  .employee-email.isClickedToShow {
+    display: block;
+  }
+  
+  .toggle-email-button {
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    padding: 8px 12px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .toggle-email-button:hover {
+    background-color: #0056b3;
+  }
+
+  a {
+    text-decoration: none;
+  }
