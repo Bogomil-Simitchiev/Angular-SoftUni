@@ -5,3 +5,8 @@ export interface ILoginData {
     password: string,
     username: string
 }
+
+export interface IRegisterData {
+    email: string,
+    password: string,
+}

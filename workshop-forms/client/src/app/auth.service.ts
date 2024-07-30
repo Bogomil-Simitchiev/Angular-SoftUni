@@ -1,7 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { BehaviorSubject, Observable } from 'rxjs';
-import { ILoginData } from './interfaces/auth';
+import { ILoginData, IRegisterData } from './interfaces/auth';
 import { Router } from '@angular/router';
 
 @Injectable({
@@ -27,7 +27,7 @@ export class AuthService {
     // Perform login logic, then set the user
     this.httpClient.post<ILoginData>(this.URL + "users/login", userData).subscribe(
       response => {
-        localStorage.setItem('user', JSON.stringify(response));
+        localStorage.setItem('user', JSON.stringify({ email: response.email, accessToken: response.accessToken, _id: response._id }));
         this.userSubject.next(userData);
         router.navigate(['/home']);
       },
@@ -36,6 +36,20 @@ export class AuthService {
       }
     );
   }
+  register(userData: IRegisterData, router: Router) {
+
+    this.httpClient.post<ILoginData>(this.URL + "users/register", { email: userData.email, password: userData.password }).subscribe(
+      response => {
+        localStorage.setItem('user', JSON.stringify({ email: response.email, accessToken: response.accessToken, _id: response._id }));
+        this.userSubject.next(userData);
+        router.navigate(['/home']);
+      },
+      error => {
+        console.error('Register failed:', error);
+      }
+    );
+  }
+
 
   logout() {
     // Perform logout logic, then clear the user

@@ -13,18 +13,11 @@ import { AuthService } from '../../../auth.service';
   templateUrl: './employees.component.html',
   styleUrls: ['./employees.component.css']
 })
-export class EmployeesComponent implements OnInit {
+export class EmployeesComponent {
   @Input() employees: Employee[];
   @Input() emailVisibility: boolean[];
-  user: IUser;
 
   constructor(private authService: AuthService) { }
-  ngOnInit(): void {
-    this.authService.user.subscribe(user => {
-      this.user = user;
-    });
-  }
- 
   toggleEmailVisibility(index: number) {
     this.emailVisibility[index] = !this.emailVisibility[index];
   }

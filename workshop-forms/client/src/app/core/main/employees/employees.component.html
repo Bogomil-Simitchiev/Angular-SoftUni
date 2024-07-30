@@ -3,7 +3,6 @@
         <span>FirstName: {{employee.first_name}}</span>
         <span>LastName: {{employee.last_name}}</span>
         <span>Gender: {{employee.gender}}</span>
-        <span *ngIf="user">Salary: {{employee.salary}}</span>
     </div>
     <p [class.isClickedToShow]="isEmailVisible(i)" class="employee-email">
         Email of {{employee.first_name}} is <strong>{{employee.email}}</strong>

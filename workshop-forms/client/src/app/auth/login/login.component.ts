@@ -3,6 +3,7 @@ import { FormBuilder, FormGroup, ReactiveFormsModule, Validators } from '@angula
 import { AuthService } from '../../auth.service';
 import { Router } from '@angular/router';
 import { CommonModule } from '@angular/common';
+import { customEmailValidator } from '../../utils';
 
 @Component({
   selector: 'app-login',
@@ -17,14 +18,13 @@ export class LoginComponent implements OnInit {
 
   ngOnInit(): void {
     this.form = this.fb.group({
-      email: [null, Validators.required],
-      password: [null, [Validators.required, Validators.minLength(5)]], // Added required validator
+      email: [null, [Validators.required, customEmailValidator()]],
+      password: [null, [Validators.required, Validators.minLength(5)]],
     });
   }
 
   handleLogin() {
     this.authService.login(this.form.value, this.router);
   }
-  // TODO: Validation text in html
 
 }

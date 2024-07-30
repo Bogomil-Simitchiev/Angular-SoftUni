@@ -1,22 +1,35 @@
 <div class="register-container">
   <h1>Register</h1>
 
-  <form>
+  <form [formGroup]="form" (ngSubmit)="handleRegister()">
     <div class="form-group">
       <label for="email">Email</label>
       <input id="email" formControlName="email" type="email" class="form-control">
+      <ng-container *ngIf="form.get('email')?.touched && form.get('email')?.invalid" class="alert alert-danger">
+        <p class="error" *ngIf="form.get('email')?.errors!['required']">Email is required!</p>
+        <p class="error" *ngIf="form.get('email')?.errors!['customEmail']">Incorrect format!</p>
+      </ng-container>
     </div>
+
 
     <div class="form-group">
       <label for="password">Password</label>
       <input id="password" formControlName="password" type="password" class="form-control">
+      <ng-container *ngIf="form.get('password')?.touched && form.get('password')?.invalid" class="alert alert-danger">
+        <p class="error" *ngIf="form.get('password')?.errors!['required']">Password is required!</p>
+        <p class="error" *ngIf="form.get('password')?.errors!['minlength']">Length must be at least 5 characters long!</p>
+      </ng-container>
     </div>
 
     <div class="form-group">
       <label for="confirmPassword">Confirm Password</label>
       <input id="confirmPassword" formControlName="confirmPassword" type="password" class="form-control">
+      <ng-container *ngIf="form.get('confirmPassword')?.touched && form.get('confirmPassword')?.invalid" class="alert alert-danger">
+        <p class="error" *ngIf="form.get('confirmPassword')?.errors!['required']">Confirm password is required!</p>
+        <p class="error" *ngIf="form.get('confirmPassword')?.errors!['passwordMatch'] && !form.get('confirmPassword')?.errors!['required']">Password don't match</p>
+      </ng-container>
     </div>
 
-    <button type="submit" class="btn">Register</button>
+    <button type="submit" [disabled]="form.invalid" class="btn">Register</button>
   </form>
 </div>

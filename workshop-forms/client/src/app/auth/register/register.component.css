@@ -62,4 +62,7 @@
   .btn:hover:not(:disabled) {
     background-color: #3498db;
   }
-  
+  .error {
+    margin-top: 5px;
+    color: red;
+  }
