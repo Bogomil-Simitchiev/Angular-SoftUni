@@ -9,5 +9,7 @@ import { Component } from '@angular/core';
   styleUrl: './register.component.css'
 })
 export class RegisterComponent {
+  //TODO: register logic and validation text in html
+
 
 }

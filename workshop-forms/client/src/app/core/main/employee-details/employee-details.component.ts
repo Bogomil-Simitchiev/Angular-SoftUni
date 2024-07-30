@@ -11,7 +11,7 @@ import { ActivatedRoute, Router } from '@angular/router';
 export class EmployeeDetailsComponent implements OnInit {
   constructor(private router: ActivatedRoute) { }
   ngOnInit(): void {
-    console.log(this.router.snapshot.params['id']);
+    console.log(this.router.snapshot.params['_id']);
 
   }
 

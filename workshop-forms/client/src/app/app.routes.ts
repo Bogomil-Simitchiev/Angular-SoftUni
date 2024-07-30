@@ -27,7 +27,7 @@ export const routes: Routes = [
     { path: '', redirectTo: '/home', pathMatch: 'full' },
     { path: 'home', component: HomeComponent, title: 'DVB Company' },
     { path: 'employees', component: MainComponent, title: 'Employees' },
-    { path: 'employees/:id', component: EmployeeDetailsComponent, title: 'Details' },
+    { path: 'employees/:_id', component: EmployeeDetailsComponent, title: 'Details' },
     { path: 'about', component: AboutComponent, title: 'About' },
     { path: 'contact', component: ContactComponent, title: 'Contact' },
     { path: 'frontend-information', component: FrontendInformationComponent },

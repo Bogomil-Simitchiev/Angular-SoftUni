@@ -9,7 +9,7 @@ import { Employee } from './interfaces/employee';
   providedIn: 'root'
 })
 export class EmployeesService {
-  private URL = 'http://localhost:3030/jsonstore';
+  private URL = 'http://localhost:3030/data';
 
   constructor(private httpClient: HttpClient) {
   }

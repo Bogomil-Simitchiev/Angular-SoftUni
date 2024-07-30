@@ -25,5 +25,6 @@ export class LoginComponent implements OnInit {
   handleLogin() {
     this.authService.login(this.form.value, this.router);
   }
+  // TODO: Validation text in html
 
 }
