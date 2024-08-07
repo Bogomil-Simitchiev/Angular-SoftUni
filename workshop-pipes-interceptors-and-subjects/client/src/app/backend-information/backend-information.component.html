@@ -1,0 +1,13 @@
+<div class="information-container">
+    <img src={{imageUrl}} alt="Valentin" class="profile-image">
+    <h1>About {{ valentin.name }}</h1>
+    <p><strong>Age:</strong> {{ valentin.age }}</p>
+    <p><strong>Profession:</strong> {{ valentin.profession }}</p>
+    <p><strong>Skills:</strong></p>
+    <ul>
+      <li *ngFor="let skill of valentin.skills">{{ skill }}</li>
+    </ul>
+    <p><strong>Experience:</strong> {{ valentin.experience }}</p>
+    <p><strong>Bio:</strong> {{ valentin.bio }}</p>
+  </div>
+  
