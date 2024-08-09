@@ -1,8 +1,9 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { BehaviorSubject, Observable } from 'rxjs';
+import { BehaviorSubject, Observable, throwError } from 'rxjs';
 import { ILoginData, IRegisterData } from './interfaces/auth';
 import { Router } from '@angular/router';
+import { MessageBusService, MessageType } from './message-bus.service';
 
 @Injectable({
   providedIn: 'root'
@@ -12,7 +13,7 @@ export class AuthService {
 
   autoLogin() {
     let userData = this.getUser();
-    
+
     if (!userData) {
       return;
     }
@@ -29,7 +30,7 @@ export class AuthService {
   private userSubject: BehaviorSubject<any>;
   public user: Observable<any>;
 
-  constructor(private httpClient: HttpClient) {
+  constructor(private httpClient: HttpClient, private messageBusService: MessageBusService) {
     this.userSubject = new BehaviorSubject<any>(null);
     this.user = this.userSubject.asObservable();
   }
@@ -41,9 +42,18 @@ export class AuthService {
         localStorage.setItem('user', JSON.stringify({ email: response.email, accessToken: response.accessToken, _id: response._id }));
         this.userSubject.next(userData);
         router.navigate(['/home']);
+        this.messageBusService.notifyForMessage({ 
+          text: 'User successfully logged in',
+          type: MessageType.Success
+        })
       },
       error => {
-        console.error('Login failed:', error);
+        console.error(error)
+        // console.error('Login failed:', error);
+        // this.messageBusService.notifyForMessage({
+        //   text: error?.error?.message,
+        //   type: MessageType.Error
+        // })
       }
     );
   }
