@@ -1,7 +1,15 @@
-<h1>Hello</h1>
+<div>
+    <h1>{{ title }}</h1>
 
-{{count$ | async}}
+    <p>Counter: {{ count$ | async }}</p>
 
-<button (click)="incrementValue()">Increment</button>
-<button (click)="decrementValue()">Decrement</button>
-<button (click)="resetValue()">Reset</button>
+    <p>User Name: {{ (user$ | async)?.name }}</p>
+    <p>{{(user$ | async)?.name ? 'Logged in' : 'Logged out' }}</p>
+
+    <button (click)="incrementValue()">Increment</button>
+    <button (click)="decrementValue()">Decrement</button>
+    <button (click)="resetValue()">Reset</button>
+    <button (click)="loginValue()">Login</button>
+    <button (click)="logout()">Logout</button>
+
+</div>
