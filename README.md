@@ -1,2 +1,2 @@
 # Angular-SoftUni
-front-end course including Angular
+SoftUni Angular Course
